@@ -1,11 +1,10 @@
-
 . "$(dirname "$0")/common.sh"
 
 
 echo "===\n>> Checking branch name..."
 
 # Check if branch protection is enabled
-if [[ -z $SKIP_BRANCH_PROTECTION ]]; then
+if [[ $ENABLE_BRANCH_PROTECTION == "true" ]]; then
     BRANCH=$(git rev-parse --abbrev-ref HEAD)
     PROTECTED_BRANCHES="^(main|master)"
 
@@ -14,7 +13,7 @@ if [[ -z $SKIP_BRANCH_PROTECTION ]]; then
         exit 1
     fi
 else
-    echo ">> Skipping branch protection."
+    echo ">> Branch protection is disabled."
 fi
 
 echo ">> Finish checking branch name"
