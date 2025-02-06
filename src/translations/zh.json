@@ -1,0 +1,34 @@
+{
+  "onboarding": {
+    "message": "欢迎使用 Boot React Native 应用"
+  },
+  "settings": {
+    "about": "关于",
+    "app_name": "应用名称",
+    "arabic": "阿拉伯语",
+    "chinese": "中文",
+    "english": "英语",
+    "generale": "通用",
+    "github": "Github",
+    "language": "语言",
+    "links": "链接",
+    "logout": "退出登录",
+    "more": "更多",
+    "privacy": "隐私政策",
+    "rate": "评分",
+    "share": "分享",
+    "support": "支持",
+    "support_us": "支持我们",
+    "terms": "服务条款",
+    "theme": {
+      "dark": "深色",
+      "light": "浅色",
+      "system": "跟随系统",
+      "title": "主题"
+    },
+    "title": "设置",
+    "version": "版本",
+    "website": "网站"
+  },
+  "welcome": "欢迎使用 Boot React Native 应用"
+}
