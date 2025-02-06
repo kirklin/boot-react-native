@@ -32,8 +32,12 @@ export function changeLanguage(lang: Language) {
     I18nManager.forceRTL(false);
   }
   if (Platform.OS === "ios" || Platform.OS === "android") {
-    if (__DEV__) {
-      NativeModules.DevSettings.reload();
+    if (__DEV__ && NativeModules.DevSettings?.reload) {
+      try {
+        NativeModules.DevSettings.reload();
+      } catch {
+        RNRestart.restart();
+      }
     } else {
       RNRestart.restart();
     }
