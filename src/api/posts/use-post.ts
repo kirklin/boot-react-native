@@ -1,8 +1,8 @@
 import type { AxiosError } from "axios";
-import type { Post } from "~/api";
+import type { Post } from "./types";
 
 import { createQuery } from "react-query-kit";
-import { client } from "~/api";
+import { client } from "../common";
 
 interface Variables {
   id: string;
