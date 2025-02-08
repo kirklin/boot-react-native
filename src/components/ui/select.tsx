@@ -1,16 +1,16 @@
+import type { BottomSheetModal } from "@gorhom/bottom-sheet";
 import type { FieldValues } from "react-hook-form";
+import type { PressableProps } from "react-native";
 import type { SvgProps } from "react-native-svg";
 import type { InputControllerType } from "./input";
 import {
   BottomSheetFlatList,
-  type BottomSheetModal,
 } from "@gorhom/bottom-sheet";
 import { FlashList } from "@shopify/flash-list";
 import { useColorScheme } from "nativewind";
 import * as React from "react";
 import { useController } from "react-hook-form";
-import { Platform, View } from "react-native";
-import { Pressable, type PressableProps } from "react-native";
+import { Platform, Pressable, View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
 import { tv } from "tailwind-variants";

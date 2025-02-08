@@ -1,9 +1,10 @@
+import type { PressableProps } from "react-native";
 import { MotiView } from "moti";
 import React, { useCallback } from "react";
 import {
   I18nManager,
   Pressable,
-  type PressableProps,
+
   View,
 } from "react-native";
 import Svg, { Path } from "react-native-svg";
