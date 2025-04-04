@@ -68,6 +68,49 @@ interface OptionsProps {
   testID?: string;
 }
 
+const Option = React.memo(
+  ({
+    label,
+    selected = false,
+    ...props
+  }: PressableProps & {
+    selected?: boolean;
+    label: string;
+  }) => {
+    return (
+      <Pressable
+        className="flex-row items-center border-b border-neutral-300 bg-white px-3 py-2 dark:border-neutral-700 dark:bg-neutral-800"
+        {...props}
+      >
+        <Text className="flex-1 dark:text-neutral-100 ">{label}</Text>
+        {selected && <Check />}
+      </Pressable>
+    );
+  },
+);
+
+function Check({ ...props }: SvgProps) {
+  return (
+    <Svg
+      width={24}
+      height={24}
+      fill="none"
+      viewBox="0 0 24 24"
+      className="text-primary-300"
+      color="currentColor"
+      {...props}
+    >
+      <Path
+        d="M20 6 9 17l-5-5"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+}
+
 function keyExtractor(item: OptionType) {
   return `select-item-${item.value}`;
 }
@@ -109,27 +152,6 @@ export const Options = React.forwardRef<BottomSheetModal, OptionsProps>(
           estimatedItemSize={52}
         />
       </Modal>
-    );
-  },
-);
-
-const Option = React.memo(
-  ({
-    label,
-    selected = false,
-    ...props
-  }: PressableProps & {
-    selected?: boolean;
-    label: string;
-  }) => {
-    return (
-      <Pressable
-        className="flex-row items-center border-b border-neutral-300 bg-white px-3 py-2 dark:border-neutral-700 dark:bg-neutral-800"
-        {...props}
-      >
-        <Text className="flex-1 dark:text-neutral-100 ">{label}</Text>
-        {selected && <Check />}
-      </Pressable>
     );
   },
 );
@@ -248,25 +270,5 @@ export function ControlledSelect<T extends FieldValues>(
       error={fieldState.error?.message}
       {...selectProps}
     />
-  );
-}
-
-function Check({ ...props }: SvgProps) {
-  return (
-    <Svg
-      width={25}
-      height={24}
-      fill="none"
-      viewBox="0 0 25 24"
-      {...props}
-      className="stroke-black dark:stroke-white"
-    >
-      <Path
-        d="m20.256 6.75-10.5 10.5L4.506 12"
-        strokeWidth={2.438}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </Svg>
   );
 }

@@ -51,6 +51,50 @@ interface ModalHeaderProps {
   dismiss: () => void;
 }
 
+/**
+ * ModalHeader
+ */
+const ModalHeader = React.memo(({ title, dismiss }: ModalHeaderProps) => {
+  return (
+    <>
+      {title && (
+        <View className="flex-row px-2 py-4">
+          <View className="size-[24px]" />
+          <View className="flex-1">
+            <Text className="text-center text-[16px] font-bold text-[#26313D] dark:text-white">
+              {title}
+            </Text>
+          </View>
+        </View>
+      )}
+      <CloseButton close={dismiss} />
+    </>
+  );
+});
+
+function CloseButton({ close }: { close: () => void }) {
+  return (
+    <Pressable
+      onPress={close}
+      className="absolute right-3 top-3 size-[24px] items-center justify-center "
+      hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
+      accessibilityLabel="close modal"
+      accessibilityRole="button"
+      accessibilityHint="closes the modal"
+    >
+      <Svg
+        className="fill-neutral-300 dark:fill-white"
+        width={24}
+        height={24}
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <Path d="M18.707 6.707a1 1 0 0 0-1.414-1.414L12 10.586 6.707 5.293a1 1 0 0 0-1.414 1.414L10.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414L12 13.414l5.293 5.293a1 1 0 0 0 1.414-1.414L13.414 12l5.293-5.293Z" />
+      </Svg>
+    </Pressable>
+  );
+}
+
 export function useModal() {
   const ref = React.useRef<BottomSheetModal>(null);
   const present = React.useCallback((data?: any) => {
@@ -149,49 +193,4 @@ function getDetachedProps(detached: boolean) {
     } as Partial<BottomSheetModalProps>;
   }
   return {} as Partial<BottomSheetModalProps>;
-}
-
-/**
- * ModalHeader
- */
-
-const ModalHeader = React.memo(({ title, dismiss }: ModalHeaderProps) => {
-  return (
-    <>
-      {title && (
-        <View className="flex-row px-2 py-4">
-          <View className="size-[24px]" />
-          <View className="flex-1">
-            <Text className="text-center text-[16px] font-bold text-[#26313D] dark:text-white">
-              {title}
-            </Text>
-          </View>
-        </View>
-      )}
-      <CloseButton close={dismiss} />
-    </>
-  );
-});
-
-function CloseButton({ close }: { close: () => void }) {
-  return (
-    <Pressable
-      onPress={close}
-      className="absolute right-3 top-3 size-[24px] items-center justify-center "
-      hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
-      accessibilityLabel="close modal"
-      accessibilityRole="button"
-      accessibilityHint="closes the modal"
-    >
-      <Svg
-        className="fill-neutral-300 dark:fill-white"
-        width={24}
-        height={24}
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <Path d="M18.707 6.707a1 1 0 0 0-1.414-1.414L12 10.586 6.707 5.293a1 1 0 0 0-1.414 1.414L10.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414L12 13.414l5.293 5.293a1 1 0 0 0 1.414-1.414L13.414 12l5.293-5.293Z" />
-      </Svg>
-    </Pressable>
-  );
 }

@@ -1,7 +1,7 @@
 import "@testing-library/react-native/extend-expect";
 
 // react-hook form setup for testing
-// @ts-ignore
-global.window = {};
-// @ts-ignore
-global.window = global;
+// @ts-expect-error - Window object needed for react-hook-form
+globalThis.window = {};
+// @ts-expect-error - Setting window to globalThis for testing
+globalThis.window = globalThis;

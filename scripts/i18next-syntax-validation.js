@@ -7,7 +7,8 @@ function validate(message = "") {
   }
   if (
     (message.includes("{") || message.includes("}"))
-    && !/\{\{ ?(?:- |\w+?)(, ?)?\w+ ?\}\}/.test(message)
+    // eslint-disable-next-line regexp/no-super-linear-backtracking
+    && !/\{\{ ?(?:- |\w+?)(?:, ?)?\w+ ?\}\}/.test(message)
   ) {
     throw new SyntaxError(
       "Interpolation error. See: https://www.i18next.com/misc/json-format",

@@ -15,6 +15,12 @@ import { useThemeConfig } from "~/lib/use-theme-config";
 // Import  global CSS file
 import "../../global.css";
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
 export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {
@@ -63,9 +69,3 @@ function Providers({ children }: { children: React.ReactNode }) {
     </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
