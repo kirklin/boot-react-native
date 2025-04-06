@@ -55,6 +55,8 @@
     "e2e-test": "maestro test .maestro/ -e APP_ID=cn.kirklin.boot"
   },
   "dependencies": {
+    "@expo/config-plugins": "~9.0.0",
+    "@expo/image-utils": "^0.6.5",
     "@expo/metro-runtime": "^4.0.1",
     "@gorhom/bottom-sheet": "^5.1.2",
     "@hookform/resolvers": "^5.0.1",
@@ -63,6 +65,7 @@
     "app-icon-badge": "^0.1.2",
     "axios": "^1.8.4",
     "expo": "~52.0.44",
+    "expo-asset": "~11.0.5",
     "expo-blur": "~14.0.3",
     "expo-constants": "~17.0.8",
     "expo-dev-client": "~5.0.20",
@@ -97,6 +100,7 @@
     "react-native-svg": "~15.8.0",
     "react-native-web": "~0.19.13",
     "react-query-kit": "^3.3.1",
+    "sharp": "^0.34.0",
     "tailwind-variants": "^1.0.0",
     "zod": "^3.24.2",
     "zustand": "^5.0.3"

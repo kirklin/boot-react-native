@@ -28,7 +28,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   slug: "boot-react-native",
   version: Env.VERSION.toString(),
   orientation: "portrait",
-  icon: "./assets/icon.png",
+  icon: "./assets/icon-with-padding.png",
   userInterfaceStyle: "automatic",
   newArchEnabled: true,
   updates: {
@@ -47,8 +47,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   android: {
     adaptiveIcon: {
-      foregroundImage: "./assets/adaptive-icon.png",
-      backgroundColor: "#2E3C4B",
+      foregroundImage: "./assets/icon-with-padding.png",
+      backgroundColor: "#FFFFFF",
     },
     package: Env.PACKAGE,
   },
@@ -60,8 +60,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       "expo-splash-screen",
       {
-        backgroundColor: "#2E3C4B",
-        image: "./assets/splash-icon.png",
+        backgroundColor: "#FFFFFF",
+        image: "./assets/icon.png",
         imageWidth: 150,
       },
     ],
