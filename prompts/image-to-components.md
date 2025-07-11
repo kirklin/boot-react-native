@@ -9,7 +9,6 @@ Your task is to create a functional React Native component based on a provided d
 Follow these steps to transform the image into a working component:
 
 1. **Layout Analysis**:
-
    - Identify the main layout structure in the image
    - Recognize key UI components (buttons, cards, lists, etc.)
    - Identify which components from `~/components/ui` can be used

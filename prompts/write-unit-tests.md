@@ -10,7 +10,6 @@ Follow these steps in sequence:
 
 1. **Component Analysis**:
    Before writing tests, analyze the component by answering:
-
    - What is the primary purpose of this component?
    - What props does it accept?
    - What user interactions does it handle?
@@ -19,7 +18,6 @@ Follow these steps in sequence:
 
 2. **Test Scenario Identification**:
    Document all possible test scenarios following this hierarchy:
-
    - Basic rendering tests
    - Props testing
    - User interaction tests
@@ -29,7 +27,6 @@ Follow these steps in sequence:
 
 3. **Test Implementation**:
    Write unit tests following React Native Testing Library and Jest guidelines:
-
    - Name test files as `[ComponentName].test.tsx`
    - Use meaningful test descriptions
    - Keep tests focused and isolated
