@@ -11,13 +11,15 @@ const schema = z.object({
   name: z.string().optional(),
   email: z
     .string({
-      required_error: "Email is required",
+      error: "Email is required",
     })
+    .nonempty()
     .email("Invalid email format"),
   password: z
     .string({
-      required_error: "Password is required",
+      error: "Password is required",
     })
+    .nonempty()
     .min(6, "Password must be at least 6 characters"),
 });
 

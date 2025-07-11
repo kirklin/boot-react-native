@@ -1,5 +1,4 @@
-import type { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import type { BottomTabDescriptor } from "@react-navigation/bottom-tabs/src/types";
+import type { BottomTabBarProps, BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 import React, { memo, useCallback, useMemo } from "react";
 import { Dimensions, Pressable, StyleSheet, Text, useColorScheme, View } from "react-native";
 import Animated, {
@@ -326,7 +325,7 @@ export function BubbleTabBar({
     const tabs: TabsConfig = {};
 
     state.routes.forEach((route) => {
-      const descriptor = descriptors[route.key] as BottomTabDescriptor;
+      const descriptor = descriptors[route.key] as { options: BottomTabNavigationOptions };
       const { options } = descriptor;
       const routeName = route.name;
 
